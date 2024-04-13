@@ -9,10 +9,12 @@ const SnackbarContext = createContext();
 export const SnackProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [message,setMessage] = useState('')
+  const [severityType,setSeverityType] = useState('')
 
-  function handleOpen(message) {
+  function handleOpen(message,severityType) {
     setOpen(true);
-    setMessage(message)
+    setMessage(message);
+    setSeverityType(severityType);
     setTimeout(()=>{
         setOpen(false)
     },4000)
@@ -20,7 +22,7 @@ export const SnackProvider = ({ children }) => {
 
   return (
     <SnackbarContext.Provider value={{handleOpen}}>
-      <SnackBar open={open} message = {message} />
+      <SnackBar open={open} message = {message} severit = {severityType}/>
       {children}
     </SnackbarContext.Provider>
   );

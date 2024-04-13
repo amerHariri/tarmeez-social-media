@@ -2,7 +2,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
 
-export default function SnackBar({open,message}) {
+export default function SnackBar({open,message,severit}) {
   
 
   return (
@@ -10,7 +10,7 @@ export default function SnackBar({open,message}) {
       
       <Snackbar open={open}>
         <Alert
-          severity="success"
+          severity={severit}
           variant="filled"
           sx={{ width: '100%' }}
         >

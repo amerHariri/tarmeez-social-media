@@ -36,7 +36,9 @@ export const LoginProvider = ({ children }) => {
             setUserInfo(userData);
             closeLoginDialog();
             setFieldsContent({ username: "", password: ""});
-            handleOpen("Login successfully");
+            handleOpen("Login successfully", "success");
+          }).catch(function (error) {
+            handleOpen(error.response.data.message,"error");
           });
       }
     }

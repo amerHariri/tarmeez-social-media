@@ -7,6 +7,8 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import Typography from '@mui/material/Typography';
 
+import "./userOption.css";
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -24,7 +26,6 @@ export default function UserOption() {
     image: userInfo.user.profile_image,
   });
 
-  console.log(userInfo);
 
   function updateUserData(){
     let formData = new FormData();
@@ -44,7 +45,10 @@ export default function UserOption() {
         headers: headers,
       })
       .then((response) => {
-        handleOpen("Post has been updated");
+        console.log(response);
+        handleOpen("Your Profile has been updated");
+      }).catch(function (error) {
+        handleOpen(error.response.data.message,"error");
       });
   }
 
@@ -60,7 +64,7 @@ export default function UserOption() {
     width: 1,
   });
   return (
-    <Card sx={{ minWidth: "70%" }}>
+    <Card className="min-card" sx={{ minWidth: "70%",padding:'10px'}}>
       <Typography sx={{padding:'15px 25px'}} variant="h5" component="div">
           Edite Your Profile
         </Typography>
@@ -81,7 +85,6 @@ export default function UserOption() {
         />
 
         <TextField
-          autoFocus
           margin="dense"
           id="password"
           name="password"
@@ -96,7 +99,6 @@ export default function UserOption() {
         />
 
         <TextField
-          autoFocus
           margin="dense"
           id="email"
           name="email"
@@ -109,12 +111,9 @@ export default function UserOption() {
             setUserData({ ...userData, email: e.target.value });
           }}
         />
-        <div style={{display:'flex',justifyContent:'flex-start',alignItems:'center',marginTop:'20px'}}>
-        <Typography sx={{ fontSize: 16,marginRight:'20px' }} color="text.secondary" gutterBottom>
-          change your image profile
-        </Typography>
+        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',marginTop:'20px'}}>
         <Button
-        sx={{width:'30%'}}
+        sx={{minWidth:'30%'}}
           component="label"
           role={undefined}
           variant="contained"

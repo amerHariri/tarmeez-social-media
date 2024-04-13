@@ -43,8 +43,10 @@ export default function NewPost() {
       })
       .then((response) => {
         setNewPost({ body: "", image: "" });
-        handleOpen("New Post Send successfully");
+        handleOpen("New Post Send successfully", "success");
         goLoadPosta()
+      }).catch(function (error) {
+        handleOpen(error.response.data.message,"error");
       });
       
   }

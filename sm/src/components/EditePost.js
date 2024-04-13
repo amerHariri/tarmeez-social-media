@@ -38,7 +38,9 @@ export default function EditePost() {
       .then((response) => {
         setShowEditeDialog(false)
         goLoadPosta()
-        handleOpen("Post has been updated");
+        handleOpen("Post has been updated", "success");
+      }).catch(function (error) {
+        handleOpen(error.response.data.message,"error");
       });
   }
 

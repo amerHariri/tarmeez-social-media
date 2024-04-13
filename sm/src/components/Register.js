@@ -9,7 +9,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 
 import { useRegister } from '../contexts/RegisterContext';
-import { Typography } from '@mui/material';
+
 
 export default function Register() {
   const {openRegisterDialog,setOpenRegisterDialog,doRegister,registerFieldContent,setRegisterFieldContent} = useRegister()
@@ -118,7 +118,7 @@ export default function Register() {
         </DialogContent>
         <DialogActions>
           <Button variant="contained" onClick={handlecloseRegisterDialog}>Cancel</Button>
-          <Button variant="contained" onClick={doRegister}>Login</Button>
+          <Button variant="contained" onClick={doRegister}>Register</Button>
         </DialogActions>
       </Dialog>
     </>

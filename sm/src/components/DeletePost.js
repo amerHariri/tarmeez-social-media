@@ -34,7 +34,9 @@ export default function DeletePost() {
       .then((response) => {
         setShowDeleteDialog(false);
         goLoadPosta();
-        handleOpen("Post has been deleted");
+        handleOpen("Post has been deleted", "success");
+      }).catch(function (error) {
+        handleOpen(error.response.data.message,"error");
       });
   }
 

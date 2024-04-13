@@ -38,7 +38,6 @@ export default function Bar() {
   const {userInfo,setUserInfo} = useUserInfo();
   const {goLoadPosta,idFirstPost} = useLoadPosts();
 
-
   useEffect(()=>{
     if(localStorage.getItem('token')){
       setUserInfo(JSON.parse(localStorage.getItem('token')));
@@ -167,7 +166,7 @@ export default function Bar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: "block", md: "none"},
               }}
             >
               {/* List */}
@@ -185,23 +184,25 @@ export default function Bar() {
                   Home
                 </Button>
               </Link>
-
+              {localStorage.getItem("token") ? 
               <Link
-                style={{ textDecoration: "none", color: "inherit" }}
-                to={`/users/${userInfo.user.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+              to={`/users/${userInfo.user.id}`}
+            >
+              <Button
+                sx={{
+                  my: 2,
+                  color: "black",
+                  width: "100%",
+                  display: "block",
+                  textAlign:'left'
+                }}
               >
-                <Button
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    width: "100%",
-                    display: "block",
-                    textAlign:'left'
-                  }}
-                >
-                  Profile
-                </Button>
-              </Link>
+                Profile
+              </Button>
+            </Link>:null
+            }
+              
 
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
@@ -242,14 +243,16 @@ export default function Bar() {
               </Button>
             </Link>
 
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to={`/users/${userInfo.user.id}`}
-            >
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Profile
-              </Button>
-            </Link>
+           {localStorage.getItem("token") ?
+               <Link
+               style={{ textDecoration: "none", color: "inherit" }}
+               to={`/users/${userInfo.user.id}`}
+             >
+               <Button sx={{ my: 2, color: "white", display: "block" }}>
+                 Profile
+               </Button>
+             </Link>:null 
+          }
 
             <Link
               style={{ textDecoration: "none", color: "inherit" }}
@@ -313,7 +316,7 @@ export default function Bar() {
                   onClick={handleOpenUserMenu}
                   sx={{ p: 0, marginLeft: "10px" }}
                 >
-                  <Avatar alt="user" src={userInfo.profile_image} />
+                  <Avatar alt="user" src={userInfo.user.profile_image} />
                 </IconButton>
               </Tooltip>
               <Menu

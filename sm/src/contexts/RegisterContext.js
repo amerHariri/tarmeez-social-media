@@ -47,7 +47,9 @@ export const RegisterProvider = ({ children }) => {
             setUserInfo(regUserData);
             closeRegisterDialog();
             setRegisterFieldContent({ name: "", username: "", password: "",image:"" });
-            handleOpen("New User Register successfully");
+            handleOpen("New User Register successfully", "success");
+          }).catch(function (error) {
+            handleOpen(error.response.data.message,"error");
           });
       }
     }
