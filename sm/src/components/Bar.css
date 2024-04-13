@@ -1,0 +1,12 @@
+@media (max-width: 899px) {
+    .first-logo {
+        display: none;
+    }
+}
+
+@media (min-width: 899px) {
+    .second-logo {
+        display: none;
+    }
+    
+}
