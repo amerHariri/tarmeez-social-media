@@ -20,7 +20,6 @@ import { DeletePostProvider } from "./contexts/DeletePostContext";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { HashRouter  as Router, Route, Routes } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
 
 
 const theme = createTheme({
