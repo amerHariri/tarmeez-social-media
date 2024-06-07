@@ -34,7 +34,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
+      <Router basename="/">
         <SnackProvider>
           <LoadPostsProvider>
             <UseInfoProvider>
