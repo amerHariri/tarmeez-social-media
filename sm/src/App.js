@@ -19,7 +19,7 @@ import { DeletePostProvider } from "./contexts/DeletePostContext";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { Routes, Route } from "react-router-dom";
+import { HashRouter  as Router, Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
 
@@ -34,7 +34,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <Router>
         <SnackProvider>
           <LoadPostsProvider>
             <UseInfoProvider>
@@ -55,6 +55,7 @@ function App() {
                               }}
                             >
                               <Bar />
+                              
                               <Routes>
                                 <Route
                                   path="/users/:userId"
@@ -67,7 +68,8 @@ function App() {
                                 <Route path="/" element={<Posts />} />
                                 <Route path="/about" element={<About />} />
                                 <Route path="/option" element={<UserOption />} />
-                              </Routes>
+                                </Routes>
+                              
                             </div>
                           </Container>
                         </div>
@@ -79,7 +81,7 @@ function App() {
             </UseInfoProvider>
           </LoadPostsProvider>
         </SnackProvider>
-      </BrowserRouter>
+      </Router>
     </ThemeProvider>
   );
 }
