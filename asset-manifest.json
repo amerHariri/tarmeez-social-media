@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/tarmeez-social-media/static/css/main.8fd1a5d7.css",
+    "main.js": "/tarmeez-social-media/static/js/main.b2e3ebbe.js",
+    "static/js/592.f11e645b.chunk.js": "/tarmeez-social-media/static/js/592.f11e645b.chunk.js",
+    "static/media/twitter.png": "/tarmeez-social-media/static/media/twitter.e58e4997ef85cbd7054c.png",
+    "static/media/wordpress-logo.png": "/tarmeez-social-media/static/media/wordpress-logo.9fa09f4e51c34ddc63d1.png",
+    "static/media/logo-about.png": "/tarmeez-social-media/static/media/logo-about.84f5cc7397a8f32bee8f.png",
+    "static/media/logo.png": "/tarmeez-social-media/static/media/logo.84f5cc7397a8f32bee8f.png",
+    "index.html": "/tarmeez-social-media/index.html",
+    "main.8fd1a5d7.css.map": "/tarmeez-social-media/static/css/main.8fd1a5d7.css.map",
+    "main.b2e3ebbe.js.map": "/tarmeez-social-media/static/js/main.b2e3ebbe.js.map",
+    "592.f11e645b.chunk.js.map": "/tarmeez-social-media/static/js/592.f11e645b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fd1a5d7.css",
+    "static/js/main.b2e3ebbe.js"
+  ]
+}
